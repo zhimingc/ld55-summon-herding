@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1ksu1fu01ef0"]
+
+[ext_resource type="Script" path="res://Summoner/summoner.gd" id="1_mayr5"]
+[ext_resource type="Texture2D" uid="uid://clc1n40n24g50" path="res://Textures/capsule_64.png" id="1_p76l5"]
+[ext_resource type="PackedScene" uid="uid://bvm3fptvjsiue" path="res://Summies/summie.tscn" id="2_fo4sc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdsph"]
+radius = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqk18"]
+radius = 48.0
+height = 176.0
+
+[node name="Summoner" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_mayr5")
+summie_scene = ExtResource("2_fo4sc")
+move_speed = 64.0
+rotate_speed = 2.0
+avoidance_fac = 0.05
+summon_rate = Vector2(3, 6)
+summon_range = Vector2(16, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fdsph")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_p76l5")
+
+[node name="OverlapArea" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapArea"]
+shape = SubResource("CapsuleShape2D_kqk18")
+
+[node name="Sprite2D" type="Sprite2D" parent="OverlapArea"]
+visible = false
+modulate = Color(1, 1, 1, 0.168627)
+scale = Vector2(1.95, 2.66)
+texture = ExtResource("1_p76l5")

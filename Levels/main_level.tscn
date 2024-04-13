@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfp246hghibas"]
+
+[ext_resource type="Texture2D" uid="uid://sapue6imynhh" path="res://Textures/checker-48.png" id="1_0k0d3"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="1_7vnfq"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_3mnxm"]
+[ext_resource type="PackedScene" uid="uid://c1ksu1fu01ef0" path="res://Summoner/summoner.tscn" id="4_7air1"]
+[ext_resource type="Script" path="res://Levels/LevelWalls.gd" id="6_tm8t4"]
+[ext_resource type="PackedScene" uid="uid://fa58l18750k6" path="res://Wall/wall.tscn" id="7_8dkqf"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.054902, 0.290196, 0.419608, 1)
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("1_0k0d3")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("1_7vnfq")
+priority_override = false
+priority = 0
+zoom = Vector2(1, 1)
+follow_mode = 0
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = false
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = true
+inactive_update_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("2_3mnxm")
+
+[node name="LevelWalls" type="Node2D" parent="."]
+position = Vector2(0, 100)
+script = ExtResource("6_tm8t4")
+level_width = 1920.0
+level_height = 880.0
+wall_scene = ExtResource("7_8dkqf")
+
+[node name="Top" type="Node2D" parent="LevelWalls"]
+
+[node name="Bottom" type="Node2D" parent="LevelWalls"]
+
+[node name="Left" type="Node2D" parent="LevelWalls"]
+
+[node name="Right" type="Node2D" parent="LevelWalls"]
+
+[node name="Summoners" type="Node2D" parent="."]
+
+[node name="Summoner" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(1, 0.278431, 0.278431, 1)
+move_speed = 124.0
+
+[node name="Summoner2" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.368627, 1, 0.239216, 1)
+move_speed = 124.0
+
+[node name="Summoner3" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.160784, 0.956863, 1, 1)
+move_speed = 124.0
+
+[node name="Summoner4" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(1, 0.278431, 0.278431, 1)
+move_speed = 124.0
+
+[node name="Summoner5" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.368627, 1, 0.239216, 1)
+move_speed = 124.0
+
+[node name="Summoner6" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.160784, 0.956863, 1, 1)
+move_speed = 124.0
+
+[node name="Summoner7" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(1, 0.278431, 0.278431, 1)
+move_speed = 124.0
+
+[node name="Summoner8" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.368627, 1, 0.239216, 1)
+move_speed = 124.0
+
+[node name="Summoner9" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.160784, 0.956863, 1, 1)
+move_speed = 124.0
+
+[node name="Summoner10" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(1, 0.278431, 0.278431, 1)
+move_speed = 124.0
+
+[node name="Summoner11" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.368627, 1, 0.239216, 1)
+move_speed = 124.0
+
+[node name="Summoner12" parent="Summoners" instance=ExtResource("4_7air1")]
+modulate = Color(0.160784, 0.956863, 1, 1)
+move_speed = 124.0
