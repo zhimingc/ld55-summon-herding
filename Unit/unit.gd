@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+class_name Unit
+
 @export var move_speed : float
 @export var rotate_speed : float
 @export var avoidance_fac : float
@@ -53,3 +55,5 @@ func get_overlapping_walls() -> Array:
 			overlapped_walls.append(body)
 	return overlapped_walls
 
+func set_move_dir(new_dir) -> void:
+	move_dir = new_dir

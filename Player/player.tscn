@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckcmvkyqbyyak"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_o3e85"]
+[ext_resource type="Texture2D" uid="uid://ceftm0jfks1bv" path="res://Textures/circle_64.png" id="1_yk11w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lendr"]
+radius = 128.0
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_o3e85")
+herd_radius = 128.0
+
+[node name="OverlapArea" type="Area2D" parent="."]
+visible = false
+position = Vector2(-160, -128)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapArea"]
+shape = SubResource("CircleShape2D_lendr")
+
+[node name="Sprite2D" type="Sprite2D" parent="OverlapArea"]
+modulate = Color(1, 0.803922, 0.211765, 0.498039)
+scale = Vector2(4, 4)
+texture = ExtResource("1_yk11w")

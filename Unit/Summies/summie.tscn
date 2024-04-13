@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvm3fptvjsiue"]
 
-[ext_resource type="Script" path="res://Summies/summie.gd" id="1_4w1vx"]
-[ext_resource type="Texture2D" uid="uid://cgednr1g3aa3x" path="res://Textures/triangle-64.png" id="1_6obcg"]
-[ext_resource type="Texture2D" uid="uid://clc1n40n24g50" path="res://Textures/capsule_64.png" id="3_0m241"]
+[ext_resource type="Script" path="res://Unit/Summies/summie.gd" id="1_l2nad"]
+[ext_resource type="Texture2D" uid="uid://cgednr1g3aa3x" path="res://Textures/triangle-64.png" id="2_prlmo"]
+[ext_resource type="Texture2D" uid="uid://clc1n40n24g50" path="res://Textures/capsule_64.png" id="3_abjmx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoe0h"]
 radius = 8.0
@@ -11,9 +11,9 @@ radius = 8.0
 radius = 48.0
 height = 176.0
 
-[node name="Summie" type="StaticBody2D"]
-collision_layer = 0
-script = ExtResource("1_4w1vx")
+[node name="Summie" type="StaticBody2D" groups=["Summie", "Unit"]]
+collision_layer = 2
+script = ExtResource("1_l2nad")
 move_speed = 48.0
 rotate_speed = 2.0
 avoidance_fac = 0.05
@@ -25,7 +25,7 @@ shape = SubResource("CircleShape2D_hoe0h")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_6obcg")
+texture = ExtResource("2_prlmo")
 
 [node name="OverlapArea" type="Area2D" parent="."]
 rotation = 1.5708
@@ -38,4 +38,4 @@ shape = SubResource("CapsuleShape2D_1yycv")
 visible = false
 modulate = Color(1, 1, 1, 0.168627)
 scale = Vector2(1.95, 2.66)
-texture = ExtResource("3_0m241")
+texture = ExtResource("3_abjmx")

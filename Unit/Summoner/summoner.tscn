@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1ksu1fu01ef0"]
 
-[ext_resource type="Script" path="res://Summoner/summoner.gd" id="1_mayr5"]
+[ext_resource type="Script" path="res://Unit/Summoner/summoner.gd" id="1_mayr5"]
 [ext_resource type="Texture2D" uid="uid://clc1n40n24g50" path="res://Textures/capsule_64.png" id="1_p76l5"]
-[ext_resource type="PackedScene" uid="uid://bvm3fptvjsiue" path="res://Summies/summie.tscn" id="2_fo4sc"]
+[ext_resource type="PackedScene" uid="uid://bvm3fptvjsiue" path="res://Unit/Summies/summie.tscn" id="2_fo4sc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fdsph"]
 radius = 16.0
@@ -11,15 +11,15 @@ radius = 16.0
 radius = 48.0
 height = 176.0
 
-[node name="Summoner" type="StaticBody2D"]
+[node name="Summoner" type="StaticBody2D" groups=["Unit"]]
 collision_layer = 2
 script = ExtResource("1_mayr5")
 summie_scene = ExtResource("2_fo4sc")
+summon_rate = Vector2(3, 6)
+summon_range = Vector2(16, 64)
 move_speed = 64.0
 rotate_speed = 2.0
 avoidance_fac = 0.05
-summon_rate = Vector2(3, 6)
-summon_range = Vector2(16, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fdsph")

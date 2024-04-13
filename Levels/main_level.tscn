@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfp246hghibas"]
+[gd_scene load_steps=8 format=3 uid="uid://bfp246hghibas"]
 
 [ext_resource type="Texture2D" uid="uid://sapue6imynhh" path="res://Textures/checker-48.png" id="1_0k0d3"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="1_7vnfq"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_3mnxm"]
-[ext_resource type="PackedScene" uid="uid://c1ksu1fu01ef0" path="res://Summoner/summoner.tscn" id="4_7air1"]
+[ext_resource type="PackedScene" uid="uid://c1ksu1fu01ef0" path="res://Unit/Summoner/summoner.tscn" id="4_7air1"]
 [ext_resource type="Script" path="res://Levels/LevelWalls.gd" id="6_tm8t4"]
+[ext_resource type="PackedScene" uid="uid://ckcmvkyqbyyak" path="res://Player/player.tscn" id="7_1tprx"]
 [ext_resource type="PackedScene" uid="uid://fa58l18750k6" path="res://Wall/wall.tscn" id="7_8dkqf"]
 
 [node name="MainLevel" type="Node2D"]
@@ -84,26 +85,4 @@ move_speed = 124.0
 modulate = Color(0.160784, 0.956863, 1, 1)
 move_speed = 124.0
 
-[node name="Summoner7" parent="Summoners" instance=ExtResource("4_7air1")]
-modulate = Color(1, 0.278431, 0.278431, 1)
-move_speed = 124.0
-
-[node name="Summoner8" parent="Summoners" instance=ExtResource("4_7air1")]
-modulate = Color(0.368627, 1, 0.239216, 1)
-move_speed = 124.0
-
-[node name="Summoner9" parent="Summoners" instance=ExtResource("4_7air1")]
-modulate = Color(0.160784, 0.956863, 1, 1)
-move_speed = 124.0
-
-[node name="Summoner10" parent="Summoners" instance=ExtResource("4_7air1")]
-modulate = Color(1, 0.278431, 0.278431, 1)
-move_speed = 124.0
-
-[node name="Summoner11" parent="Summoners" instance=ExtResource("4_7air1")]
-modulate = Color(0.368627, 1, 0.239216, 1)
-move_speed = 124.0
-
-[node name="Summoner12" parent="Summoners" instance=ExtResource("4_7air1")]
-modulate = Color(0.160784, 0.956863, 1, 1)
-move_speed = 124.0
+[node name="Player" parent="." instance=ExtResource("7_1tprx")]
